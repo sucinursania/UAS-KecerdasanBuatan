@@ -18,7 +18,7 @@ Dataset yang digunakan merupakan data historis saham MNC Bank yang terdiri dari 
 - **Volume**: Jumlah volume transaksi
 Selain itu, dibuat juga fitur tambahan `Label` berupa nilai biner (0 = turun, 1 = naik) sebagai target klasifikasi untuk KNN. Proses analisis awal dilakukan untuk memahami distribusi nilai, hubungan antar fitur, serta melihat pola umum pada data.
 
-### 4. Exploratory Data Analysis (EDA)
+### 3. Exploratory Data Analysis (EDA)
 Dilakukan eksplorasi terhadap data untuk memahami distribusi, pola, serta kemungkinan anomali pada dataset. Tahapan EDA mencakup:
 - **Statistik deskriptif awal**, seperti nilai rata-rata, minimum, maksimum, dan standar deviasi dari masing-masing fitur (Open, High, Low, Close, Volume).
 - **Visualisasi distribusi fitur**, misalnya menggunakan histogram atau boxplot untuk melihat apakah ada outlier atau nilai ekstrem yang tidak wajar.
@@ -27,7 +27,7 @@ Dilakukan eksplorasi terhadap data untuk memahami distribusi, pola, serta kemung
 - **Distribusi kelas pada target `Label`**, dilakukan untuk mengetahui apakah data balance (seimbang) antara label naik (1) dan turun (0). Jika tidak seimbang, hal ini dapat mempengaruhi performa model klasifikasi.
 EDA membantu menentukan strategi praproses dan pemilihan fitur yang tepat, serta memberi insight awal terhadap perilaku data historis saham.
 
-### 3. Data Preparation
+### 4. Data Preparation
 Tahap ini mencakup beberapa proses sebagai berikut:
 - **Seleksi Fitur**: Menghapus kolom yang tidak diperlukan dan memilih fitur yang berpengaruh terhadap target.
 - **Encoding Label**: Menambahkan kolom `Label` dengan menggunakan logika sederhana apakah harga penutupan naik dibanding hari sebelumnya.
@@ -35,7 +35,7 @@ Tahap ini mencakup beberapa proses sebagai berikut:
 - **Normalisasi (opsional)**: Model Linear Regression tidak wajib dinormalisasi, tetapi bisa digunakan pada model lain.
 Tujuannya adalah menyiapkan data agar siap dimasukkan ke dalam model machine learning.
 
-### 4. Modeling
+### 5. Modeling
 Proses ini mencakup pembangunan dan pelatihan dua model:
 - **Linear Regression**
   - Digunakan untuk memprediksi harga penutupan secara langsung.
@@ -47,7 +47,7 @@ Proses ini mencakup pembangunan dan pelatihan dua model:
   - Model memprediksi kelas 0 atau 1 berdasarkan nilai K tetangga terdekat.
 Proses pelatihan dan prediksi dilakukan untuk masing-masing model secara terpisah.
 
-### 5. Evaluation
+### 6. Evaluation
 Evaluasi model dilakukan untuk mengukur performa masing-masing pendekatan. Dua kategori evaluasi dilakukan:
 - **Evaluasi Regresi (Linear Regression)**
   - Hasil prediksi `Close` dibandingkan dengan nilai aktual.
@@ -62,7 +62,7 @@ Evaluasi model dilakukan untuk mengukur performa masing-masing pendekatan. Dua k
   - Ditampilkan juga **confusion matrix** dalam bentuk teks dan visualisasi heatmap.
 Hasil evaluasi menunjukkan bahwa model Linear Regression memiliki performa yang lebih baik (akurasi 71.24%) dibanding KNN (akurasi 43.01%).
 
-### 6. Kesimpulan dan Rekomendasi
+### 7. Kesimpulan dan Rekomendasi
 Dari hasil modeling dan evaluasi, diperoleh kesimpulan bahwa **Linear Regression lebih cocok digunakan** dalam konteks dataset ini dibandingkan KNN. Hal ini dapat disebabkan oleh pola hubungan antar fitur yang cenderung linier, sehingga pendekatan regresi mampu menangkap tren lebih baik dibanding klasifikasi berbasis jarak.
 Adapun rekomendasi pengembangan lanjutan adalah:
 - Meningkatkan jumlah data historis (lebih panjang dan lebih luas),
