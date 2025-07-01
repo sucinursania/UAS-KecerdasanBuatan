@@ -18,6 +18,15 @@ Dataset yang digunakan merupakan data historis saham MNC Bank yang terdiri dari 
 - **Volume**: Jumlah volume transaksi
 Selain itu, dibuat juga fitur tambahan `Label` berupa nilai biner (0 = turun, 1 = naik) sebagai target klasifikasi untuk KNN. Proses analisis awal dilakukan untuk memahami distribusi nilai, hubungan antar fitur, serta melihat pola umum pada data.
 
+### 4. Exploratory Data Analysis (EDA)
+Dilakukan eksplorasi terhadap data untuk memahami distribusi, pola, serta kemungkinan anomali pada dataset. Tahapan EDA mencakup:
+- **Statistik deskriptif awal**, seperti nilai rata-rata, minimum, maksimum, dan standar deviasi dari masing-masing fitur (Open, High, Low, Close, Volume).
+- **Visualisasi distribusi fitur**, misalnya menggunakan histogram atau boxplot untuk melihat apakah ada outlier atau nilai ekstrem yang tidak wajar.
+- **Heatmap korelasi**, untuk melihat hubungan antara fitur numerik, terutama sejauh mana `Close` dipengaruhi oleh `Open`, `High`, `Low`, dan `Volume`.
+- **Pemeriksaan missing value**, meskipun dalam dataset ini tidak ditemukan nilai kosong, tahap ini tetap dilakukan untuk memastikan kualitas data.
+- **Distribusi kelas pada target `Label`**, dilakukan untuk mengetahui apakah data balance (seimbang) antara label naik (1) dan turun (0). Jika tidak seimbang, hal ini dapat mempengaruhi performa model klasifikasi.
+EDA membantu menentukan strategi praproses dan pemilihan fitur yang tepat, serta memberi insight awal terhadap perilaku data historis saham.
+
 ### 3. Data Preparation
 Tahap ini mencakup beberapa proses sebagai berikut:
 - **Seleksi Fitur**: Menghapus kolom yang tidak diperlukan dan memilih fitur yang berpengaruh terhadap target.
